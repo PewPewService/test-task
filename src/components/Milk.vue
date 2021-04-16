@@ -119,6 +119,6 @@ export default{
     }
 
     span{
-        color:white;
+        color:gray;
     }
 </style>
