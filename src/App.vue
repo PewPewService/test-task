@@ -128,7 +128,7 @@
 </script>
 
 <style>
-    @media(min-aspect-ratio: 9/16){
+    @media(min-width:800px){
         #app{
             margin-left: 35%;
             margin-right: 35%;
