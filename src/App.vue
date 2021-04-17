@@ -225,5 +225,6 @@
     .back:hover{
       background-color: rgb(200, 230, 250);
       border: 0.5rem solid rgb(200, 230, 250);
+      cursor:pointer;
     }
 </style>

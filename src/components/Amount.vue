@@ -41,15 +41,16 @@ export default{
         color:white;
         font-size: 1.4rem;
         text-align: center;
-        margin-right: 1rem;
         margin-left: 1rem;
         line-height: height;
+        cursor:pointer;
     }
     #minus{
         background-color: red;
         width:1.8rem;
         height:1.8rem;
         background-repeat: round;
+        margin-right: 1rem;
         background-image: url("./../assets/minus.png");
     }
     #minus.disabled{

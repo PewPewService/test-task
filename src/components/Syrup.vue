@@ -43,5 +43,6 @@ export default({
 .radios{
     font-size: 1rem;
     line-height: height;
+    cursor: pointer;
 }
 </style>
