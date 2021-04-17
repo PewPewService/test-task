@@ -27,14 +27,17 @@
     margin-top:2rem;
     margin-bottom:1rem;
     height:2.5rem;
+    font-size: 1rem;
     color:white;
     background-color: rgb(55, 40, 33);
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
     width:-webkit-fill-available;
     border:0px;
     border-radius: 0.1rem;
     cursor: pointer;
+    padding-right: 1rem;
+    padding-left:1rem;
 }
 .sum{
     float:right;
