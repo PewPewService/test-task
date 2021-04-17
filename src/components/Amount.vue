@@ -1,8 +1,8 @@
 <template>
     <div class="amount">
-        <input type="button" id="minus" class="amounts disabled" :disabled="MinusDisable" ref="mD" value="-" @click="onMinus()">
+        <input type="button" id="minus" class="amounts disabled" :disabled="MinusDisable" ref="mD"  @click="onMinus()">
         <span id="amount" >{{count}}</span>
-        <input type="button" class="amounts" id="plus" value="+" @click="onPlus()">
+        <input type="button" class="amounts" id="plus" @click="onPlus()">
     </div>
 </template>
 
@@ -43,19 +43,32 @@ export default{
         text-align: center;
         margin-right: 1rem;
         margin-left: 1rem;
+        line-height: height;
     }
     #minus{
         background-color: red;
+        width:1.8rem;
+        height:1.8rem;
+        background-repeat: round;
+        background-image: url("./../assets/minus.png");
     }
     #minus.disabled{
         background-color: gray;
     }
     #plus{
         background-color: rgb(156, 111, 75);
+        width:1.8rem;
+        height:1.8rem;
+        background-repeat: round;
+        background-image: url("./../assets/plus.png");
     }
     #amount{
         font-size: 1.4rem;
         align-self: right;
         color:black;
+        vertical-align: super;
+    }
+    .amount{
+        float: right;
     }
 </style>

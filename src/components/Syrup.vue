@@ -1,9 +1,10 @@
 <template>
     <div>
         <div class="name">
-            {{syrupsDesc}}
+            {{syrupsDesc.name}}<span class="required" v-if="syrupsDesc.required">(REQUIRED)</span>
             <span class="radios" @click="Clear()">reset</span>
         </div>
+        <div class="additional" v-if="syrupsDesc.additional">{{syrupsDesc.additional}}</div>
         <p class="choices" v-for="syrup in syrups" :key="syrup.id" @click="SelectSyrup(syrup.id,syrup.price)">
             {{syrup.name}}
             <span :id="syrup.id" v-if="syrup.price>0">
@@ -19,7 +20,7 @@
 export default({
     name:"Syrup",
     props:{
-        syrupsDesc: String,
+        syrupsDesc: Object,
         syrups: Array,
         currency: String,
     },
@@ -41,6 +42,6 @@ export default({
 <style scoped>
 .radios{
     font-size: 1rem;
-    margin-top: 0.5rem;
+    line-height: height;
 }
 </style>

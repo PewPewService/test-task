@@ -1,8 +1,10 @@
 <template>
     <div>
         <div class="name">
-            {{chocsDesc}}
+            {{chocsDesc.name}}
+            <span class="required" v-if="chocsDesc.required">(REQUIRED)</span>
         </div>
+        <div class="additional" v-if="chocsDesc.additional">{{chocsDesc.additional}}</div>
         <p class="container" v-for="choc in chocs" :key="choc.id" @click="SelectChocolate(choc.id)">
             {{choc.name}}
             <span :id="choc.id" v-if="choc.price>0">
@@ -18,7 +20,7 @@
 export default({
     name:"Chocolate",
     props:{
-        chocsDesc: String,
+        chocsDesc: Object,
         chocs: Array,
         currency: String,
     },
@@ -64,7 +66,6 @@ export default({
 
 .mark {
   float:right;
-  margin-right: 1rem;
   height: 1rem;
   width: 1rem;
   background-color: white;
@@ -90,7 +91,7 @@ export default({
 }
 
 .container .mark:after {
-  right:2.43rem;
+  right:1.43rem;
     top: 0.43em;
     height: 0.5rem;
     width: 0.5rem;

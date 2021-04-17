@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <div class="back"></div>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
     <img src="./assets/raph.jpg">
@@ -7,8 +8,10 @@
            <p class="coffeeName"> {{coffeeName}} </p>
            <p class="desc"> {{description}} </p>
         </div>
-        <div class="price"> {{currency}} {{basePrice}} </div>
-        <Amount :count="count" @decreaseAmount="decrease" @increaseAmount="increase" />
+        <div>
+          <div class="price"> {{currency}} {{basePrice}} </div>
+          <Amount :count="count" @decreaseAmount="decrease" @increaseAmount="increase" />
+        </div>
         <Milk :milks="milks" :milksDesc="milksDesc" :currency="currency" @selectMilk="selectMilk" />
         <Syrup :syrups="syrups" :syrupsDesc="syrupsDesc" :currency="currency" @selectSyrup="selectSyrup" />
         <Chocolate :chocs="chocs" :chocsDesc="chocsDesc" :currency="currency" @selectChocolate="selectChocolate" />
@@ -42,13 +45,13 @@
         currency:String,
         count: Number,
         totalPrice: Number,
-        milksDesc:String,
+        milksDesc:[],
         milks:[],
         milksprice: Number,
-        syrupsDesc:String,
+        syrupsDesc:[],
         syrups:[],
         syrupsprice: Number,
-        chocsDesc:String,
+        chocsDesc:[],
         chocs:[],
         chocsprice: Number,
       }
@@ -76,7 +79,11 @@
       this.basePrice=125;
       this.currency="$";
       this.count=1;
-      this.milksDesc="MILK OPTION";
+      this.milksDesc={
+        name:"MILK OPTION",
+        required:true,
+        additional:"Please select 1 item"
+      };
       this.milks=[
         {
           id:1,
@@ -95,7 +102,11 @@
         }
       ];
       this.milksprice=0;
-      this.syrupsDesc="SYRUP OPTION",
+      this.syrupsDesc={
+        name:"SYRUP OPTION",
+        required:false,
+        additional:""
+      },
       this.syrups=[
         {
           id:1,
@@ -114,7 +125,11 @@
         }
       ],
       this.syrupsprice=0;
-      this.chocsDesc="CHOCOLADE",
+      this.chocsDesc={
+        name:"CHOCOLADE",
+        required:false,
+        additional:""
+      };
       this.chocs=[
         {
           id:1,
@@ -176,11 +191,14 @@
       text-align: center;
       font-size:1.5rem;
       margin-bottom: 0px;
+      font-weight: bold;
     }
     .desc{
       text-align: center;
       font-size:0.9rem;
       color:gray;
+      padding-bottom: 1rem;
+      border-bottom: 1px lightgray solid;
     }
     .price{
       font-size: 1.4rem;
@@ -192,5 +210,20 @@
       float:right;
       padding-right: 1rem;
       display: inline;
+    }
+    .back{
+      background-color: rgb(253, 255, 255);
+      border-radius: 50%;
+      position: absolute;
+      width: 1.5rem;
+      height: 1.5rem;
+      margin:1rem;
+      background-image: url("./assets/arrow.png");
+      background-repeat: round;
+      border: 0.5rem solid rgb(253, 255, 255);
+    }
+    .back:hover{
+      background-color: rgb(200, 230, 250);
+      border: 0.5rem solid rgb(200, 230, 250);
     }
 </style>
