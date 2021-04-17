@@ -2,7 +2,7 @@
     <div>
         <div class="name">
             {{syrupsDesc}}
-            <span class="radios" @click="Clear()">X</span>
+            <span class="radios" @click="Clear()">reset</span>
         </div>
         <p class="choices" v-for="syrup in syrups" :key="syrup.id" @click="SelectSyrup(syrup.id,syrup.price)">
             {{syrup.name}}
@@ -37,3 +37,10 @@ export default({
     }
 })
 </script>
+
+<style scoped>
+.radios{
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+</style>

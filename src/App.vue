@@ -71,55 +71,65 @@
       }
     },
     created(){
-      this.coffeeName="Раф";
-      this.description="Описание";
-      this.basePrice=60;
-      this.currency="₽";
+      this.coffeeName="Flat White";
+      this.description="Freshly-ground beans and steamed milk";
+      this.basePrice=125;
+      this.currency="$";
       this.count=1;
-      this.milksDesc="Молоко";
+      this.milksDesc="MILK OPTION";
       this.milks=[
         {
           id:1,
-          name:"молоко1",
+          name:"Full Milk",
           price:0,
         },
         {
           id:2,
-          name:"Молоко2",
+          name:"Skim Milk",
+          price:0,
+        },
+        {
+          id:3,
+          name:"Soy Milk",
           price:20,
         }
       ];
       this.milksprice=0;
-      this.syrupsDesc="Сиропы",
+      this.syrupsDesc="SYRUP OPTION",
       this.syrups=[
         {
           id:1,
-          name:"Сироп1",
-          price:33,
+          name:"Nutty",
+          price:10,
         },
         {
           id:2,
-          name:"Сироп2",
-          price:29,
-        }
-      ],
-      this.syrupsprice=0;
-      this.chocsDesc="Шоколад",
-      this.chocs=[
-        {
-          id:1,
-          name:"Шоколад1",
-          price:69
-        },
-        {
-          id:2,
-          name:"Шоколад 2",
-          price:59
+          name:"Cherry",
+          price:10,
         },
         {
           id:3,
-          name:"шоколад3",
-          price:74
+          name:"Chocolade",
+          price:10,
+        }
+      ],
+      this.syrupsprice=0;
+      this.chocsDesc="CHOCOLADE",
+      this.chocs=[
+        {
+          id:1,
+          name:"Toblerone",
+          price:70
+        },
+        {
+          id:2,
+          name:"Patchi",
+          price:60
+        },
+        {
+          id:3,
+          name:"Spartak",
+          price:40
         }
       ],
       this.chocsprice=0;
@@ -128,19 +138,35 @@
 </script>
 
 <style>
-    @media(min-width:800px){
+    @media(min-width:500px){
+      body{
+        background-color: lightsteelblue;
+      }
+      #app{
+        background-color: white;
+      }
+    }
+    @media(min-width:500px) and (max-width:700px){
         #app{
-            margin-left: 35%;
-            margin-right: 35%;
-            background-color: white;
+            margin-left: 15%;
+            margin-right: 15%;
         }
-        body{
-          background-color: lightsteelblue;
-          font-family: 'Noto Sans', sans-serif;
+    }
+    @media(min-width:701px) and (max-width:1000px){
+        #app{
+            margin-left: 22%;
+            margin-right: 22%;
+        }
+    }
+    @media(min-width:1001px){
+        #app{
+            margin-left: 32%;
+            margin-right: 32%;
         }
     }
     body{
-      margin:0px
+      margin:0px;
+      font-family: 'Noto Sans', sans-serif;
     }
     img{
         width:100%;
@@ -149,6 +175,7 @@
     .coffeeName{
       text-align: center;
       font-size:1.5rem;
+      margin-bottom: 0px;
     }
     .desc{
       text-align: center;

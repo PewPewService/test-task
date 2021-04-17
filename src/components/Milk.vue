@@ -36,10 +36,10 @@ export default{
     .name{
         margin-top:1rem;
         padding: 1rem;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         text-align: left;
         height: 2rem;
-        background-color: lightgray;
+        background-color: rgb(242, 242, 242);
 
     }
 

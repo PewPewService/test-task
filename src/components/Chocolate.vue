@@ -50,6 +50,10 @@ export default({
     user-select: none;
 }
 
+.container:last-of-type{
+  border-bottom: 0px;
+}
+
 .container input {
   position: absolute;
   opacity: 0;

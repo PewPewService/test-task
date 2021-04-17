@@ -2,8 +2,8 @@
     <div>
         <button class="total">
             <img class="cart">
-            Добавить {{count}} в корзину
-            <span class="sum">{{count*(bp+mp+sp+cp)}}</span>
+            ADD {{count}} TO CART
+            <span class="sum">{{currency}}{{count*(bp+mp+sp+cp)}}</span>
         </button>
     </div>
 </template>
@@ -16,7 +16,8 @@
             bp: Number,
             mp: Number,
             sp: Number,
-            cp: Number
+            cp: Number,
+            currency: String
         }
     }
 </script>
@@ -27,7 +28,7 @@
     margin-bottom:1rem;
     height:2rem;
     color:white;
-    background-color: black;
+    background-color: rgb(55, 40, 33);
     margin-left: 1rem;
     margin-right: 1rem;
     width:-webkit-fill-available;

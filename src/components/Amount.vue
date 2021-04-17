@@ -51,7 +51,7 @@ export default{
         background-color: gray;
     }
     #plus{
-        background-color: goldenrod;
+        background-color: rgb(156, 111, 75);
     }
     #amount{
         font-size: 1.4rem;
